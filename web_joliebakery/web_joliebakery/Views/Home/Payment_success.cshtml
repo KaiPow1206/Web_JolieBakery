@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Payment_success";
+}
+<link href="~/Content/CSS/payment_success.css" rel="stylesheet" />
+
+<div class="container-fluid" style="padding-bottom:26px">
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-4">
+
+        </div>
+
+        <div id="success" class="col-sm-4 mt-4">
+            <div class="panel-group">   
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h2 class="text-center"><i>PAYMENT STATUS</i></h2>
+                    </div>
+                    <div id="text" class="panel-body mt-4">
+                        <p>
+                            We have received your order. We sincerely thank you for supporting our tiny shop.
+                            Your order is awaiting confirmation. We will contact you as soon as possible.
+                            Once again, Jolie Bakery would like to thank you for supporting us.
+                            You can track your order here:
+                        </p>
+                    </div>
+                    <div class="panel-body d-flex justify-content-center mt-4">
+                        <a href="@Url.Action("Bills","Home")">
+                            <button class="btn btn-outline-success">
+                                VIEW ORDER STATUS
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+
+        </div>
+    </div>
+</div>

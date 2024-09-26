@@ -1,0 +1,102 @@
+﻿@model web_joliebakery.Models.TBL_HOADON
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/master_admin.cshtml";
+}
+
+<link href="~/Content/CSS/edit-delete.css" rel="stylesheet" />
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center mt-4">
+                <h2><strong>EDIT INVOICE</strong></h2>
+                <br />
+                <div>
+                    <h3>
+                        <strong>
+                            @if (ViewData["TRANGTHAICAPNHAT"] != null)
+                            {
+                                <span style="color: @(ViewData["Success"] != null && (bool)ViewData["Success"] ? "green" : "red")">
+                                    @ViewData["TRANGTHAICAPNHAT"].ToString()
+                                </span>
+                            }
+                            @if (ViewData["Success"] != null && (bool)ViewData["Success"])
+                            {
+                                <script type="text/javascript">
+                                    setTimeout(function() {
+                                        window.location.href = '@Url.Action("Ordered", "Manage")';
+                                    }, 4000);
+                                </script>
+                            }
+                        </strong>
+                    </h3>
+                </div>
+            </div>
+            <div>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <table class="table table-bordered" style="border: 1px solid gray; border-collapse: collapse;">
+                        <tr>
+                            <td style="border: 1px solid gray;">CODE OF INVOICE</td>
+                            <td style="border: 1px solid gray;">
+                                @Html.DisplayFor(model => model.MAHD)
+                                @Html.HiddenFor(model => model.MAHD)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid gray;">NAME OF CUSTOMER</td>
+                            <td style="border: 1px solid gray;">
+                                @Html.DisplayFor(model => model.TEN_KHACH_HANG)
+                                @Html.HiddenFor(model => model.TEN_KHACH_HANG)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid gray;">PHONE NUMBER</td>
+                            <td style="border: 1px solid gray;">
+                                @Html.DisplayFor(model => model.SDT)
+                                @Html.HiddenFor(model => model.SDT)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid gray;">ADDRESS OF CUSTOMER</td>
+                            <td style="border: 1px solid gray;">
+                                @Html.DisplayFor(model => model.DIA_CHI_GIAO_HANG)
+                                @Html.HiddenFor(model => model.DIA_CHI_GIAO_HANG)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid gray;">NOTE</td>
+                            <td style="border: 1px solid gray;">
+                                @Html.DisplayFor(model => model.GHICHU)
+                                @Html.HiddenFor(model => model.GHICHU)
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid gray;">STATUS</td>
+                            <td style="border: 1px solid gray;">
+                                @Html.DropDownListFor(model => model.TRANG_THAI, new SelectList(new[]
+                                {
+                                    new SelectListItem { Text = "Đơn đang xử lí", Value = "1" },
+                                    new SelectListItem { Text = "Đơn đang được giao", Value = "2" },
+                                    new SelectListItem { Text = "Đơn đã được giao", Value = "3" },
+                                    new SelectListItem { Text = "Đơn đã bị hủy", Value = "-1" }
+                                }, "Value", "Text", Model.TRANG_THAI), new { @class = "form-control" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-center">
+                                <input class="btn btn-success" value="Submit" type="submit" />
+                                <input class="btn btn-secondary" value="Back" type="button" onclick="window.location.href='@Url.Action("Ordered", "Manage")'" />
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>

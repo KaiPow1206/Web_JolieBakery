@@ -1,0 +1,82 @@
+﻿@model IEnumerable<web_joliebakery.Models.TBL_HOADON>
+@{
+    ViewBag.Title = "Ordered";
+    Layout = "~/Views/Shared/master_admin.cshtml";
+}
+@{
+    web_joliebakery.Models.Jolie_bakeryEntities1 db = new web_joliebakery.Models.Jolie_bakeryEntities1();
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<style>
+    div.container-fluid {
+        font-family: "Crimson Text", serif;
+    }
+
+    hr.custom-hr {
+        margin: 20px 0;
+    }
+
+    .table-bordered {
+        border: 1px solid #333;
+    }
+
+        .table-bordered th,
+        .table-bordered td {
+            border: 1px solid #333 !important;
+        }
+
+    .panel-heading h2,
+    .table th,
+    .table td {
+        color: #000;
+    }
+</style>
+<div class="container-fluid" style="padding-bottom:26px;">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-group">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h2 style="margin-top:26px">INVOICE</h2>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-bordered">
+                            <tr class="text-center">
+                                <th>NAME OF CUSTOMER</th>
+                                <th>PHONE NUMBER</th>
+                                <th>ADDRESS OF CUSTOMER</th>
+                                <th>PRODUCT DETAILS</th>
+                                <th>NOTE</th>
+                                <th>TOTAL</th>
+                                <th>STATUS</th>
+                                <th>ACT</th>
+                            </tr>
+                            @foreach (var item in Model)
+                            {
+                                var lchitiet = db.TBL_HOADON_CHITIET.Where(ct => ct.MAHD == item.MAHD).ToList();
+                                var productDetails = string.Join("<br/>", lchitiet.Select(ct => $"{ct.MASP}, {ct.TENSP}"));
+                                <tr class="text-center">
+                                    <td>@item.TEN_KHACH_HANG</td>
+                                    <td>@item.SDT</td>
+                                    <td>@item.DIA_CHI_GIAO_HANG</td>
+                                    <td>@Html.Raw(productDetails)</td>
+                                    <td>@item.GHICHU</td>
+                                    <td>@String.Format("{0:N0} VND", item.TONG_THANH_TIEN)</td>
+                                    <td>@item.TRANG_THAI</td>
+                                    <td>
+                                        <a href="@Url.Action("Edit_Ord", "Manage", new { id = item.IDHD})" class="btn btn-primary btn-sm">Edit</a>
+                                    </td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                    <div class="panel-body">
+                        <a href="@Url.Action("Admin", "Manage")" role="button">
+                            <button class="btn btn-outline-info">BACK</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

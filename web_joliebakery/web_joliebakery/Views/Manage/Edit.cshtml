@@ -1,0 +1,130 @@
+﻿@model web_joliebakery.Models.TBL_SANPHAM
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/master_admin.cshtml";
+}
+<link href="~/Content/CSS/edit-delete.css" rel="stylesheet" />
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="~/Content/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="~/Content/ckfinder/ckfinder.js"></script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center mt-4">
+                <h2><strong>EDIT PRODUCT</strong></h2>
+                <br />
+                <div>
+                    <h3>
+                        <strong>
+                            @if (ViewData["TRANGTHAICAPNHAT"] != null)
+                            {
+                                <span style="color: @(ViewData["Success"] != null && (bool)ViewData["Success"] ? "green" : "red")">
+                                    @ViewData["TRANGTHAICAPNHAT"].ToString()
+                                </span>
+                            }
+                            @if (ViewData["Success"] != null && (bool)ViewData["Success"])
+                            {
+                                <script type="text/javascript">
+                                    setTimeout(function() {
+                                        window.location.href = '@Url.Action("Admin", "Manage")';
+                                    }, 4000);
+                                </script>
+                            }
+                        </strong>
+                    </h3>
+                </div>
+            </div>
+            <div>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    <table class="table table-bordered" style="border: 1px solid gray; border-collapse: collapse;">
+                        <tr>
+                            <td style="border: 1px solid gray;">CODE OF PRODUCT</td>
+                            <td style="border: 1px solid gray;">
+                                @Html.TextBoxFor(model => model.MASP, new { @class = "form-control"})
+                                @Html.ValidationMessageFor(model => model.MASP, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid gray;">NAME OF PRODUCT</td>
+                            <td style="border: 1px solid gray;">
+                                @Html.TextBoxFor(model => model.TENSP, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.TENSP, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid gray;">DESCRIBE</td>
+                            <td style="border: 1px solid gray;">
+                                @Html.TextAreaFor(model => model.NOIDUNG, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.NOIDUNG, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid gray;">PRICE (VNĐ)</td>
+                            <td style="border: 1px solid gray;">
+                                @Html.TextBoxFor(model => model.GIATIEN, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.GIATIEN, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid gray;">INVENTORY</td>
+                            <td style="border: 1px solid gray;">
+                                @Html.TextBoxFor(model => model.SO_LUONG_TON_TRONG_KHO, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.SO_LUONG_TON_TRONG_KHO, "", new { @class = "text-danger" })
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid gray;"><label class="control-label">PIC</label></td>
+                            <td style="border: 1px solid gray;">
+                                @Html.TextBoxFor(model => model.HINH_DAI_DIEN, new { @class = "form-control", @id = "txt_hinhdaidien" })
+                                @Html.ValidationMessageFor(model => model.HINH_DAI_DIEN, "", new { @class = "text-danger" })
+                                <input id="btn_hinhdaidien" type="button" value="Browse" class="btn btn-primary mt-2" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid gray;"><label class="control-label">PICD 1</label></td>
+                            <td style="border: 1px solid gray;">
+                                @Html.TextBoxFor(model => model.HINH_CHI_TIET_1, new { @class = "form-control", @id = "txt_hinhchitiet_1" })
+                                @Html.ValidationMessageFor(model => model.HINH_CHI_TIET_1, "", new { @class = "text-danger" })
+                                <input id="btn_hinhchitiet_1" type="button" value="Browse" class="btn btn-primary mt-2" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid gray;"><label class="control-label">PICD 2</label></td>
+                            <td style="border: 1px solid gray;">
+                                @Html.TextBoxFor(model => model.HINH_CHI_TIET_2, new { @class = "form-control", @id = "txt_hinhchitiet_2" })
+                                @Html.ValidationMessageFor(model => model.HINH_CHI_TIET_2, "", new { @class = "text-danger" })
+                                <input id="btn_hinhchitiet_2" type="button" value="Browse" class="btn btn-primary mt-2" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid gray;"><label class="control-label">PICD 3</label></td>
+                            <td style="border: 1px solid gray;">
+                                @Html.TextBoxFor(model => model.HINH_CHI_TIET_3, new { @class = "form-control", @id = "txt_hinhchitiet_3" })
+                                @Html.ValidationMessageFor(model => model.HINH_CHI_TIET_3, "", new { @class = "text-danger" })
+                                <input id="btn_hinhchitiet_3" type="button" value="Browse" class="btn btn-primary mt-2" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid gray;"><label class="control-label">PICD 4</label></td>
+                            <td style="border: 1px solid gray;">
+                                @Html.TextBoxFor(model => model.HINH_CHI_TIET_4, new { @class = "form-control", @id = "txt_hinhchitiet_4" })
+                                @Html.ValidationMessageFor(model => model.HINH_CHI_TIET_4, "", new { @class = "text-danger" })
+                                <input id="btn_hinhchitiet_4" type="button" value="Browse" class="btn btn-primary mt-2" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="text-center">
+                                <input class="btn btn-success" value="Submit" type="submit" />
+                                <input class="btn btn-secondary" value="Back" type="button" onclick="window.location.href='@Url.Action("Admin", "Manage")'" />
+                            </td>
+                        </tr>
+                    </table>
+                }
+            </div>
+        </div>
+    </div>
+</div>

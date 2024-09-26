@@ -1,0 +1,272 @@
+﻿@model IEnumerable<web_joliebakery.Models.TBL_HOADON>
+
+@{
+    ViewBag.Title = "Bills";
+}
+
+<link href="~/Content/CSS/bills.css" rel="stylesheet" />
+
+@{
+    web_joliebakery.Models.Jolie_bakeryEntities1 db = new web_joliebakery.Models.Jolie_bakeryEntities1();
+    @*hoa_don_dang_xu_ly trạng thái = 1*@
+    List<web_joliebakery.Models.TBL_HOADON> list_hoa_don_dang_duoc_xu_ly = Model.Where(t => t.TRANG_THAI == 1).ToList();
+    @*hoa_don_dang_duoc_giao trạng thái = 2*@
+    List<web_joliebakery.Models.TBL_HOADON> list_hoa_don_dang_duoc_giao = Model.Where(t => t.TRANG_THAI == 2).ToList();
+    @*hoa_don_da_hoan_thanh trạng thái = 3 nguoi dung da nhan hang*@
+    List<web_joliebakery.Models.TBL_HOADON> list_hoa_don_da_hoan_thanh = Model.Where(t => t.TRANG_THAI == 3).ToList();
+    @*hoa_don_da_huy = -1 huy boi nguoi dung hoac nha cung cap*@
+    List<web_joliebakery.Models.TBL_HOADON> list_hoa_don_da_huy = Model.Where(t => t.TRANG_THAI == -1).ToList();
+}
+<div id="bill" class="container-fluid" style="padding-bottom:26px">
+    <div class="row">
+        <div class="col-md-12">
+            @using (Html.BeginForm("Bills", "Home"))
+            {
+                <div class="input-group mt-4">
+                    <input type="text" name="SODIENTHOAI" class="form-control" placeholder="YOUR PHONE NUMBER" aria-label="YOUR PHONE NUMBER">
+                    <div>
+                        <button class="btn btn-danger"><strong>SEARCH...</strong></button>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <h4>@ViewData["TRANGTHAITIMKIEM"]</h4>
+                </div>
+            }
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="accordion" id="billsAccordion">
+                <div class="card">
+                    <div id="background" class="card-header text-white">
+                        <h3 class="mb-0 text-dark d-flex justify-content-center">
+                            INVOICE DETAILS
+                        </h3>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row mt-5">
+                        <div class="col-md-3">
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <a href="#hoa_don_dang_xu_ly" class="btn btn-outline-warning" aria-expanded="false" data-toggle="collapse">
+                                        <h6>Invoice is being processed (@list_hoa_don_dang_duoc_xu_ly.Count)</h6>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#hoa_don_dang_duoc_giao" class="btn btn-outline-primary" aria-expanded="false" data-toggle="collapse">
+                                        <h6>Invoices are being delivered (@list_hoa_don_dang_duoc_giao.Count)</h6>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#hoa_don_da_hoan_thanh" class="btn btn-outline-dark" aria-expanded="false" data-toggle="collapse">
+                                        <h6>
+                                            Invoice completed (@list_hoa_don_da_hoan_thanh.Count)
+                                        </h6>
+                                    </a>
+                                </li>
+                                <li class="list-group-item">
+                                    <a href="#hoa_don_da_huy" class="btn btn-outline-danger" aria-expanded="false" data-toggle="collapse">
+                                        <h6>
+                                            Invoice canceled (@list_hoa_don_da_huy.Count)
+                                        </h6>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-9">
+                            <div id="hoa_don_dang_xu_ly" class="collapse" data-parent="#billsAccordion">
+                                <!--PHẦN HÓA ĐƠN-->
+                                <div class="card">
+                                    <div id="background" class="card-header text-bg-dark">
+                                        <h2 class="mb-0">Invoice is being processed (@list_hoa_don_dang_duoc_xu_ly.Count)</h2>
+                                    </div>
+                                    @foreach (var item in list_hoa_don_dang_duoc_xu_ly)
+                                    {
+                                        <div id="background" class="card-header">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-3">Code of invoice: @item.MAHD</div>
+                                                        <div class="col-md-3">Addr: @item.DIA_CHI_GIAO_HANG</div>
+                                                        <div class="col-md-3">Date: @item.NGAYBAN.ToString()</div>
+                                                        <div class="col-md-3">Total: @string.Format("{0:N0}", item.TONG_THANH_TIEN) VNĐ</div>
+                                                    </div>
+                                                    <hr />
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <th>CODE OF PRODUCT</th>
+                                                            <th>NAME OF PRODUCT</th>
+                                                            <th>UNIT</th>
+                                                            <th>PRICE</th>
+                                                            <th>TOTAL</th>
+                                                        </tr>
+                                                        @{
+                                                            List<web_joliebakery.Models.TBL_HOADON_CHITIET> lchitiet = db.TBL_HOADON_CHITIET.Where(ct => ct.MAHD == item.MAHD).ToList();
+                                                        }
+                                                        @foreach (var sanpham in lchitiet)
+                                                        {
+                                                            <tr>
+                                                                <td>@sanpham.MASP</td>
+                                                                <td>@sanpham.TENSP</td>
+                                                                <td>@sanpham.SOLUONG</td>
+                                                                <td>@sanpham.GIATIEN.ToString("N0") VNĐ</td>
+                                                                <td>@sanpham.THANH_TIEN.ToString("N0") VNĐ</td>
+                                                            </tr>
+                                                        }
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div id="hoa_don_dang_duoc_giao" class="collapse" data-parent="#billsAccordion">
+                                <hr />
+                                <!--PHẦN HÓA ĐƠN-->
+                                <div class="card">
+                                    <div id="background" class="card-header text-bg-dark">
+                                        <h2 class="mb-0">Invoices are being delivered (@list_hoa_don_dang_duoc_giao.Count)</h2>
+                                    </div>
+                                    @foreach (var item in list_hoa_don_dang_duoc_giao)
+                                    {
+                                        <div id="background" class="card-header">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-3">Code of invoice: @item.MAHD</div>
+                                                        <div class="col-md-3">Addr: @item.DIA_CHI_GIAO_HANG</div>
+                                                        <div class="col-md-3">Date: @item.NGAYBAN.ToString()</div>
+                                                        <div class="col-md-3">Total: @string.Format("{0:N0}", item.TONG_THANH_TIEN) VNĐ</div>
+                                                    </div>
+                                                    <hr />
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <th>CODE OF PRODUCT</th>
+                                                            <th>NAME OF PRODUCT</th>
+                                                            <th>UNIT</th>
+                                                            <th>PRICE</th>
+                                                            <th>TOTAL</th>
+                                                        </tr>
+                                                        @{
+                                                            List<web_joliebakery.Models.TBL_HOADON_CHITIET> lchitiet = db.TBL_HOADON_CHITIET.Where(ct => ct.MAHD == item.MAHD).ToList();
+                                                        }
+                                                        @foreach (var sanpham in lchitiet)
+                                                        {
+                                                            <tr>
+                                                                <td>@sanpham.MASP</td>
+                                                                <td>@sanpham.TENSP</td>
+                                                                <td>@sanpham.SOLUONG</td>
+                                                                <td>@sanpham.GIATIEN.ToString("N0") VNĐ</td>
+                                                                <td>@sanpham.THANH_TIEN.ToString("N0") VNĐ</td>
+                                                            </tr>
+                                                        }
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div id="hoa_don_da_hoan_thanh" class="collapse" data-parent="#billsAccordion">
+                                <hr />
+                                <!--PHẦN HÓA ĐƠN-->
+                                <div class="card">
+                                    <div id="background" class="card-header text-bg-dark">
+                                        <h2 class="mb-0">Invoice completed (@list_hoa_don_da_hoan_thanh.Count)</h2>
+                                    </div>
+                                    @foreach (var item in list_hoa_don_da_hoan_thanh)
+                                    {
+                                        <div id="background" class="card-header">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-3">Code of invoice: @item.MAHD</div>
+                                                        <div class="col-md-3">Addr: @item.DIA_CHI_GIAO_HANG</div>
+                                                        <div class="col-md-3">Date: @item.NGAYBAN.ToString()</div>
+                                                        <div class="col-md-3">Total: @string.Format("{0:N0}", item.TONG_THANH_TIEN) VNĐ</div>
+                                                    </div>
+                                                    <hr />
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <th>CODE OF PRODUCT</th>
+                                                            <th>NAME OF PRODUCT</th>
+                                                            <th>UNIT</th>
+                                                            <th>PRICE</th>
+                                                            <th>TOTAL</th>
+                                                        </tr>
+                                                        @{
+                                                            List<web_joliebakery.Models.TBL_HOADON_CHITIET> lchitiet = db.TBL_HOADON_CHITIET.Where(ct => ct.MAHD == item.MAHD).ToList();
+                                                        }
+                                                        @foreach (var sanpham in lchitiet)
+                                                        {
+                                                            <tr>
+                                                                <td>@sanpham.MASP</td>
+                                                                <td>@sanpham.TENSP</td>
+                                                                <td>@sanpham.SOLUONG</td>
+                                                                <td>@sanpham.GIATIEN.ToString("N0") VNĐ</td>
+                                                                <td>@sanpham.THANH_TIEN.ToString("N0") VNĐ</td>
+                                                            </tr>
+                                                        }
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div id="hoa_don_da_huy" class="collapse" data-parent="#billsAccordion">
+                                <hr />
+                                <!--PHẦN HÓA ĐƠN-->
+                                <div class="card">
+                                    <div id="background" class="card-header text-bg-dark">
+                                        <h2 class="mb-0">Invoice canceled (@list_hoa_don_da_huy.Count)</h2>
+                                    </div>
+                                    @foreach (var item in list_hoa_don_da_huy)
+                                    {
+                                        <div id="background" class="card-header">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-md-3">Code of invoice: @item.MAHD</div>
+                                                        <div class="col-md-3">Addr: @item.DIA_CHI_GIAO_HANG</div>
+                                                        <div class="col-md-3">Date: @item.NGAYBAN.ToString()</div>
+                                                        <div class="col-md-3">Total: @string.Format("{0:N0}", item.TONG_THANH_TIEN) VNĐ</div>
+                                                    </div>
+                                                    <hr />
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <th>CODE OF PRODUCT</th>
+                                                            <th>NAME OF PRODUCT</th>
+                                                            <th>UNIT</th>
+                                                            <th>PRICE</th>
+                                                            <th>TOTAL</th>
+                                                        </tr>
+                                                        @{
+                                                            List<web_joliebakery.Models.TBL_HOADON_CHITIET> lchitiet = db.TBL_HOADON_CHITIET.Where(ct => ct.MAHD == item.MAHD).ToList();
+                                                        }
+                                                        @foreach (var sanpham in lchitiet)
+                                                        {
+                                                            <tr>
+                                                                <td>@sanpham.MASP</td>
+                                                                <td>@sanpham.TENSP</td>
+                                                                <td>@sanpham.SOLUONG</td>
+                                                                <td>@sanpham.GIATIEN.ToString("N0") VNĐ</td>
+                                                                <td>@sanpham.THANH_TIEN.ToString("N0") VNĐ</td>
+                                                            </tr>
+                                                        }
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

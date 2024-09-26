@@ -1,0 +1,78 @@
+﻿@model web_joliebakery.Models.TBL_SANPHAM
+@{
+    ViewBag.Title = "Shop_details";
+}
+<link href="~/Content/CSS/shop_details.css" rel="stylesheet" />
+
+<div class="container-fluid" style="padding-bottom:26px">
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="details_all" class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img style="width: 100%" class="card-img-top" src="@Model.HINH_DAI_DIEN"
+                                     alt="..." />
+                                <div class="magnifier"></div>
+                            </div>
+                        </div>
+                        <hr style="background-color:#ddd;height:1px" />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img class="card-img-top" src="@Model.HINH_CHI_TIET_1"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img class="card-img-top" src="@Model.HINH_CHI_TIET_2"/>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <img class="card-img-top" src="@Model.HINH_CHI_TIET_3"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel-group">
+                            <div class="panel panel-default">
+                                <div id="details-product" class="panel-heading" style="margin-top:10px">
+                                    Name Of Product: @Model.TENSP
+                                </div>
+
+                                <div id="details-product" class="panel-heading" style="margin-top:10px">
+                                    ID Of Product: @Model.MASP
+                                </div>
+
+                                <div id="details-product" class="panel-body" style="margin-top:10px">
+                                    Price 🎂: @Model.GIATIEN.ToString("N0") VNĐ
+                                </div>
+
+                                <hr style="background-color:#ddd;height:1px"/>
+                                <div class="panel-body" style="margin-top:10px">
+                                    <button class="btn btn-outline-info" onclick="AddToCarts(@Model.IDSP)">Add To Cart</button>
+                                    <a href="@Url.Action("Pay_Product","Home")">
+                                        <button class="btn btn-outline-danger">Payments</button>    
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr style="background-color:#ddd;height:1px" />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="panel-danger">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">DETAILED PRODUCT DESCRIPTION</div>
+                                <p style="margin-top:5px;">@Model.NOIDUNG</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

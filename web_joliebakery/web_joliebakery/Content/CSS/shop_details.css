@@ -1,0 +1,21 @@
+﻿#details_all{
+    margin-top:26px;
+}
+img.card-img-top {
+    border-radius: 26px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+img.card-img-top:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+
+img.card-img-top:active {
+    transform: scale(0.98);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+#details-product{
+    font-size:19px;
+}

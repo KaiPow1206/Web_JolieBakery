@@ -1,0 +1,120 @@
+﻿@model web_joliebakery.Models.cart
+
+@{
+    ViewBag.Title = "Pay_Product";
+}
+<link href="~/Content/CSS/pay_product.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<div class="container-fluid" style="padding-bottom: 26px">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel-group">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">
+                        <h2 class="text-center" style="margin-top:26px">FILL IN PAYMENT INFORMATION</h2>
+                        <span style="color:green"><i>@ViewData["TRANGTHAITHANHTOAN"]</i></span>
+
+                    </div>
+                    <div class="panel-body" style="margin-top:26px">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="panel panel-warning">
+                                    <div class="panel-heading">
+                                        <h4>DETAILED PRODUCT LIST</h4>
+                                    </div>
+                                    <div class="panel-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-striped">
+                                                <tr>
+                                                    <th>CODE OF PRODUCT</th>
+                                                    <th>NAME OF PRODUCT</th>
+                                                    <th>PRODUCT</th>
+                                                    <th>UNIT</th>
+                                                    <th>PRICE</th>
+                                                    <th>TOTAL</th>
+                                                    <th>DELETE</th>
+                                                </tr>
+                                                @foreach (var item in Model.SP)
+                                                {
+                                                    <tr>
+                                                        <td>@item.MASP</td>
+                                                        <td>@item.TENSP</td>
+                                                        <td style="width: 20%">
+                                                            <img class="card-img-top img-responsive"
+                                                                 src="@item.HINH" alt="..." />
+                                                        </td>
+                                                        <td>
+                                                            @item.SO_LUONG
+                                                        </td>
+                                                        <td>
+                                                            @item.GIATIEN.ToString("N0") VNĐ
+                                                        </td>
+                                                        <td>
+                                                            @item.THANHTIEN.ToString("N0") VNĐ
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex justify-content-center" style="font-size:20px">
+                                                                <a href="@Url.Action("Delete_Cart","Home", new {id=item.ID})"
+                                                                   onclick="return confirm('You wanna delete this product?');">
+                                                                    <i class="bi bi-x-circle-fill"></i>
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+                                @using (Html.BeginForm("Pay_Product", "Home"))
+                                {
+                                    <div class="panel panel-warning">
+                                        <div class="panel-heading">
+                                            <h4>CUSTOMER'S INFORMATION</h4>
+                                        </div>
+                                        <form onsubmit="return validateForm()">
+                                            <!-- Nội dung form -->
+                                            <div class="row form-group">
+                                                <div class="col-md-6"><strong>Customer's Name</strong></div>
+                                                <div class="col-md-6"><input name="TENKHACHHANG" id="customerName" placeholder="Name...." class="form-control" required value="@ViewData["TENKHACHANG"]" /></div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6"><strong>Customer's Phone</strong></div>
+                                                <div class="col-md-6"><input name="SODIENTHOAI" id="customerPhone" placeholder="Phone Number...." class="form-control" required value="@ViewData["SODIENTHOAI"]" /></div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6"><strong>Customer's Address</strong></div>
+                                                <div class="col-md-6"><input name="DIACHI" id="customerAddress" placeholder="Address...." class="form-control" required  value="@ViewData["DIACHIKHACHHANG"]" /></div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col-md-6"><strong>Note</strong></div>
+                                                <div class="col-md-6"><input name="GHICHU" placeholder="More...." class="form-control"  value="@ViewData["GHICHU"]" /></div>
+                                            </div>
+                                            <div class="panel-body">
+                                                <div class="row form-group">
+                                                    <div class="col-md-6"><h3>TOTAL: </h3></div>
+                                                    <div class="col-md-6"><h4>@ViewData["TONGTIEN"] VNĐ</h4></div>
+                                                </div>
+                                                <div class="row form-group">
+                                                    <div class="col-md-12">
+                                                        <button type="submit" class="btn btn-success">SUBMIT PAYMENTS</button>
+                                                        <a href="@Url.Action("Online_Payments","Home")">
+                                                            <button type="button" style="background-color:lightblue" class="btn btn-light">ONLINE PAYMENTS</button>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

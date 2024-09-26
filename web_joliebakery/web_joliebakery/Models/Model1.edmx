@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Jolie_bakeryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Loai" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="CakeName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Birthday" Type="date" Nullable="false" />
+          <Property Name="MessageCake" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="CakeType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CakeTaste" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AnotherTaste" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TAIKHOAN">
+          <Key>
+            <PropertyRef Name="EMAIL" />
+          </Key>
+          <Property Name="EMAIL" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="PASSWORD" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PASSWORDSALT" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="ACCESS" Type="int" />
+        </EntityType>
+        <EntityType Name="TBL_HOADON">
+          <Key>
+            <PropertyRef Name="IDHD" />
+          </Key>
+          <Property Name="IDHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MAHD" Type="varchar" MaxLength="100" />
+          <Property Name="TEN_KHACH_HANG" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="SDT" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DIA_CHI_GIAO_HANG" Type="nvarchar" MaxLength="500" />
+          <Property Name="GHICHU" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TONG_THANH_TIEN" Type="float" />
+          <Property Name="TRANG_THAI" Type="int" Nullable="false" />
+          <Property Name="NGAYBAN" Type="datetime" />
+        </EntityType>
+        <EntityType Name="TBL_HOADON_CHITIET">
+          <Key>
+            <PropertyRef Name="IDCTHD" />
+          </Key>
+          <Property Name="IDCTHD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MAHD" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MASP" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TENSP" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="SOLUONG" Type="int" Nullable="false" />
+          <Property Name="GIATIEN" Type="float" Nullable="false" />
+          <Property Name="THANH_TIEN" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_SANPHAM">
+          <Key>
+            <PropertyRef Name="IDSP" />
+          </Key>
+          <Property Name="IDSP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MASP" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TENSP" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="NOIDUNG" Type="nvarchar" MaxLength="4000" Nullable="false" />
+          <Property Name="THOIGIAN" Type="time" Precision="7" />
+          <Property Name="GIATIEN" Type="float" Nullable="false" />
+          <Property Name="GIACU" Type="float" />
+          <Property Name="SO_LUONG_TON_TRONG_KHO" Type="int" />
+          <Property Name="HINH_DAI_DIEN" Type="nvarchar" MaxLength="100" />
+          <Property Name="HINH_CHI_TIET_1" Type="nvarchar" MaxLength="100" />
+          <Property Name="HINH_CHI_TIET_2" Type="nvarchar" MaxLength="100" />
+          <Property Name="HINH_CHI_TIET_3" Type="nvarchar" MaxLength="100" />
+          <Property Name="HINH_CHI_TIET_4" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="Jolie_bakeryModelStoreContainer">
+          <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TAIKHOAN" EntityType="Self.TAIKHOAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_HOADON" EntityType="Self.TBL_HOADON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_HOADON_CHITIET" EntityType="Self.TBL_HOADON_CHITIET" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBL_SANPHAM" EntityType="Self.TBL_SANPHAM" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Jolie_bakeryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBL_HOADON_CHITIET">
+          <Key>
+            <PropertyRef Name="IDCTHD" />
+          </Key>
+          <Property Name="IDCTHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MAHD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MASP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENSP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GIATIEN" Type="Double" Nullable="false" />
+          <Property Name="SOLUONG" Type="Int32" Nullable="false" />
+          <Property Name="THANH_TIEN" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TBL_SANPHAM">
+          <Key>
+            <PropertyRef Name="IDSP" />
+          </Key>
+          <Property Name="IDSP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MASP" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENSP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="NOIDUNG" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="THOIGIAN" Type="Time" Precision="7" />
+          <Property Name="GIATIEN" Type="Double" Nullable="false" />
+          <Property Name="GIACU" Type="Double" />
+          <Property Name="SO_LUONG_TON_TRONG_KHO" Type="Int32" />
+          <Property Name="HINH_DAI_DIEN" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HINH_CHI_TIET_1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HINH_CHI_TIET_2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HINH_CHI_TIET_3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="HINH_CHI_TIET_4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="Jolie_bakeryEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBL_HOADON_CHITIET" EntityType="Self.TBL_HOADON_CHITIET" />
+          <EntitySet Name="TBL_SANPHAM" EntityType="Self.TBL_SANPHAM" />
+          <EntitySet Name="TBL_HOADON" EntityType="Jolie_bakeryModel.TBL_HOADON" />
+          <EntitySet Name="TAIKHOANs" EntityType="Jolie_bakeryModel.TAIKHOAN" />
+          <EntitySet Name="Orders" EntityType="Jolie_bakeryModel.Order" />
+        </EntityContainer>
+        <EntityType Name="TBL_HOADON">
+          <Key>
+            <PropertyRef Name="IDHD" />
+          </Key>
+          <Property Name="IDHD" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MAHD" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TEN_KHACH_HANG" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="DIA_CHI_GIAO_HANG" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="GHICHU" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TONG_THANH_TIEN" Type="Double" />
+          <Property Name="TRANG_THAI" Type="Int32" Nullable="false" />
+          <Property Name="NGAYBAN" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TAIKHOAN">
+          <Key>
+            <PropertyRef Name="EMAIL" />
+          </Key>
+          <Property Name="EMAIL" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORD" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PASSWORDSALT" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ACCESS" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Loai" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CakeName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="MessageCake" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CakeType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CakeTaste" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AnotherTaste" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Jolie_bakeryModelStoreContainer" CdmEntityContainer="Jolie_bakeryEntities1">
+          <EntitySetMapping Name="TBL_HOADON_CHITIET">
+            <EntityTypeMapping TypeName="Jolie_bakeryModel.TBL_HOADON_CHITIET">
+              <MappingFragment StoreEntitySet="TBL_HOADON_CHITIET">
+                <ScalarProperty Name="IDCTHD" ColumnName="IDCTHD" />
+                <ScalarProperty Name="MAHD" ColumnName="MAHD" />
+                <ScalarProperty Name="MASP" ColumnName="MASP" />
+                <ScalarProperty Name="TENSP" ColumnName="TENSP" />
+                <ScalarProperty Name="GIATIEN" ColumnName="GIATIEN" />
+                <ScalarProperty Name="SOLUONG" ColumnName="SOLUONG" />
+                <ScalarProperty Name="THANH_TIEN" ColumnName="THANH_TIEN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_SANPHAM">
+            <EntityTypeMapping TypeName="Jolie_bakeryModel.TBL_SANPHAM">
+              <MappingFragment StoreEntitySet="TBL_SANPHAM">
+                <ScalarProperty Name="IDSP" ColumnName="IDSP" />
+                <ScalarProperty Name="MASP" ColumnName="MASP" />
+                <ScalarProperty Name="TENSP" ColumnName="TENSP" />
+                <ScalarProperty Name="NOIDUNG" ColumnName="NOIDUNG" />
+                <ScalarProperty Name="THOIGIAN" ColumnName="THOIGIAN" />
+                <ScalarProperty Name="GIATIEN" ColumnName="GIATIEN" />
+                <ScalarProperty Name="GIACU" ColumnName="GIACU" />
+                <ScalarProperty Name="SO_LUONG_TON_TRONG_KHO" ColumnName="SO_LUONG_TON_TRONG_KHO" />
+                <ScalarProperty Name="HINH_DAI_DIEN" ColumnName="HINH_DAI_DIEN" />
+                <ScalarProperty Name="HINH_CHI_TIET_1" ColumnName="HINH_CHI_TIET_1" />
+                <ScalarProperty Name="HINH_CHI_TIET_2" ColumnName="HINH_CHI_TIET_2" />
+                <ScalarProperty Name="HINH_CHI_TIET_3" ColumnName="HINH_CHI_TIET_3" />
+                <ScalarProperty Name="HINH_CHI_TIET_4" ColumnName="HINH_CHI_TIET_4" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBL_HOADON">
+            <EntityTypeMapping TypeName="Jolie_bakeryModel.TBL_HOADON">
+              <MappingFragment StoreEntitySet="TBL_HOADON">
+                <ScalarProperty Name="NGAYBAN" ColumnName="NGAYBAN" />
+                <ScalarProperty Name="TRANG_THAI" ColumnName="TRANG_THAI" />
+                <ScalarProperty Name="TONG_THANH_TIEN" ColumnName="TONG_THANH_TIEN" />
+                <ScalarProperty Name="GHICHU" ColumnName="GHICHU" />
+                <ScalarProperty Name="DIA_CHI_GIAO_HANG" ColumnName="DIA_CHI_GIAO_HANG" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="TEN_KHACH_HANG" ColumnName="TEN_KHACH_HANG" />
+                <ScalarProperty Name="MAHD" ColumnName="MAHD" />
+                <ScalarProperty Name="IDHD" ColumnName="IDHD" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TAIKHOANs">
+            <EntityTypeMapping TypeName="Jolie_bakeryModel.TAIKHOAN">
+              <MappingFragment StoreEntitySet="TAIKHOAN">
+                <ScalarProperty Name="ACCESS" ColumnName="ACCESS" />
+                <ScalarProperty Name="PASSWORDSALT" ColumnName="PASSWORDSALT" />
+                <ScalarProperty Name="PASSWORD" ColumnName="PASSWORD" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="Jolie_bakeryModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="AnotherTaste" ColumnName="AnotherTaste" />
+                <ScalarProperty Name="CakeTaste" ColumnName="CakeTaste" />
+                <ScalarProperty Name="CakeType" ColumnName="CakeType" />
+                <ScalarProperty Name="MessageCake" ColumnName="MessageCake" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="CakeName" ColumnName="CakeName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Loai" ColumnName="Loai" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

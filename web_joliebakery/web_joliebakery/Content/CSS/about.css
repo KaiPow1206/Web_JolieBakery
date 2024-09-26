@@ -1,0 +1,21 @@
+﻿h4 {
+    font-family: "Crimson Text", serif;
+    text-align: center;
+    margin-top:26px;
+}
+                
+#text-about,
+#text-contact,
+#text-term {
+    line-height: 1.9;
+    text-align: justify;
+    margin-top: 26px;
+    padding-right: 60px;
+}
+
+
+#phone-text,
+#email-text {
+    color: #00CCCC;
+    cursor: pointer;
+}

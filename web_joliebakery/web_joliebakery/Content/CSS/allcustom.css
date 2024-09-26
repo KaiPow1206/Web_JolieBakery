@@ -1,0 +1,29 @@
+﻿h4 {
+    font-family: "Crimson Text", serif;
+    text-align: center;
+    text-shadow: 0.1em 0.2em 0.7em black;
+}
+
+button.btn_1 {
+    padding: 12.5px 30px;
+    border-radius: 100px;
+    border: 0;
+    border-radius: 100px;
+    background-color: #2ba8fb;
+    color: #ffffff;
+    font-weight: Bold;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+button.btn_1:hover {
+    background-color: #6fc5ff;
+    box-shadow: 0 0 20px #6fc5ff50;
+    transform: scale(1.1);
+}
+button.btn_1:active {
+    background-color: #3d94cf;
+    transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    box-shadow: none;
+    transform: scale(0.98);
+}

@@ -1,0 +1,30 @@
+﻿#priceRange {
+    font-family: "Crimson Text", serif;
+}
+
+#priceDisplay {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.content #pic {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+
+@media only screen and (max-device-width: 480px) {
+    .content #pic {
+        max-width: 100%;
+        object-fit: fill;
+    }
+}
+
+
+.checkbox {
+    cursor: pointer;
+}
+
+h4 {
+    font-family: "Crimson Text", serif;
+}

@@ -1,0 +1,30 @@
+﻿@model web_joliebakery.Models.TAIKHOAN
+@{
+    ViewBag.Title = "Login";
+}
+
+<link href="~/Content/CSS/account.css" rel="stylesheet">
+
+<div class="container" style="padding-bottom:26px;">
+    <div class="form_area visible" id="login-form">
+        <p class="title">LOGIN</p>
+        @using (Html.BeginForm("Login", "Admin", FormMethod.Post, new { id = "loginForm" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form_group">
+                @Html.LabelFor(m => m.EMAIL, new { @class = "sub_title" })
+                @Html.TextBoxFor(m => m.EMAIL, new { @id = "login-email", @class = "form_style", placeholder = "Enter your email", required = "required", type = "email" })
+            </div>
+
+            <div class="form_group">
+                @Html.LabelFor(m => m.PASSWORD, new { @class = "sub_title" })
+                @Html.PasswordFor(m => m.PASSWORD, new { @id = "login-password", @class = "form_style", placeholder = "Enter your password", required = "required", type = "password" })
+            </div>
+
+            <div>
+                <button type="submit" class="btn">LOGIN</button>
+            </div>
+        }
+        @Html.ValidationSummary(true, "", new { @class = "text-danger"})
+    </div>
+</div>

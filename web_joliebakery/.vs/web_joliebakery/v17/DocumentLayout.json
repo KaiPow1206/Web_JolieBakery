@@ -1,0 +1,166 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|c:\\anhthai\\asp\\2211110019_nguyennhoanhthai_baocaoproject\\source\\web_joliebakery\\web_joliebakery\\views\\manage\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|solutionrelative:web_joliebakery\\views\\manage\\admin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|c:\\anhthai\\asp\\2211110019_nguyennhoanhthai_baocaoproject\\source\\web_joliebakery\\web_joliebakery\\views\\admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|solutionrelative:web_joliebakery\\views\\admin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\views\\home\\pay_product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|solutionrelative:web_joliebakery\\views\\home\\pay_product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\views\\home\\bills.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|solutionrelative:web_joliebakery\\views\\home\\bills.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|solutionrelative:web_joliebakery\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\views\\manage\\edit_ord.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|solutionrelative:web_joliebakery\\views\\manage\\edit_ord.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\views\\manage\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|solutionrelative:web_joliebakery\\views\\manage\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\views\\manage\\custom_order.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|solutionrelative:web_joliebakery\\views\\manage\\custom_order.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\views\\manage\\ordered.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4C222D06-0940-4CB2-8AE5-9F499E62477B}|web_joliebakery\\web_joliebakery.csproj|solutionrelative:web_joliebakery\\views\\manage\\ordered.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Admin.cshtml",
+              "DocumentMoniker": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Manage\\Admin.cshtml",
+              "RelativeDocumentMoniker": "web_joliebakery\\Views\\Manage\\Admin.cshtml",
+              "ToolTip": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Manage\\Admin.cshtml",
+              "RelativeToolTip": "web_joliebakery\\Views\\Manage\\Admin.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-25T09:48:33.956Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Admin\\Login.cshtml",
+              "RelativeDocumentMoniker": "web_joliebakery\\Views\\Admin\\Login.cshtml",
+              "ToolTip": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Admin\\Login.cshtml",
+              "RelativeToolTip": "web_joliebakery\\Views\\Admin\\Login.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-25T09:34:17.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Pay_Product.cshtml",
+              "DocumentMoniker": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Home\\Pay_Product.cshtml",
+              "RelativeDocumentMoniker": "web_joliebakery\\Views\\Home\\Pay_Product.cshtml",
+              "ToolTip": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Home\\Pay_Product.cshtml",
+              "RelativeToolTip": "web_joliebakery\\Views\\Home\\Pay_Product.cshtml",
+              "ViewState": "AQIAAF4AAAAAAAAAAAAAAGcAAABnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-25T09:23:49.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Bills.cshtml",
+              "DocumentMoniker": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Home\\Bills.cshtml",
+              "RelativeDocumentMoniker": "web_joliebakery\\Views\\Home\\Bills.cshtml",
+              "ToolTip": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Home\\Bills.cshtml",
+              "RelativeToolTip": "web_joliebakery\\Views\\Home\\Bills.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-25T09:23:45.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Custom_Order.cshtml",
+              "DocumentMoniker": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Manage\\Custom_Order.cshtml",
+              "RelativeDocumentMoniker": "web_joliebakery\\Views\\Manage\\Custom_Order.cshtml",
+              "ToolTip": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Manage\\Custom_Order.cshtml",
+              "RelativeToolTip": "web_joliebakery\\Views\\Manage\\Custom_Order.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-24T06:18:40.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Ordered.cshtml",
+              "DocumentMoniker": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Manage\\Ordered.cshtml",
+              "RelativeDocumentMoniker": "web_joliebakery\\Views\\Manage\\Ordered.cshtml",
+              "ToolTip": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Manage\\Ordered.cshtml",
+              "RelativeToolTip": "web_joliebakery\\Views\\Manage\\Ordered.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-24T06:16:49.598Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Edit_Ord.cshtml",
+              "DocumentMoniker": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Manage\\Edit_Ord.cshtml",
+              "RelativeDocumentMoniker": "web_joliebakery\\Views\\Manage\\Edit_Ord.cshtml",
+              "ToolTip": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Manage\\Edit_Ord.cshtml",
+              "RelativeToolTip": "web_joliebakery\\Views\\Manage\\Edit_Ord.cshtml",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAAFkAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-24T06:14:31.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Manage\\Edit.cshtml",
+              "RelativeDocumentMoniker": "web_joliebakery\\Views\\Manage\\Edit.cshtml",
+              "ToolTip": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Views\\Manage\\Edit.cshtml",
+              "RelativeToolTip": "web_joliebakery\\Views\\Manage\\Edit.cshtml",
+              "ViewState": "AQIAACcAAAAAAAAAAAAAAC4AAABjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-24T06:14:18.473Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "web_joliebakery\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\anhthai\\ASP\\2211110019_NguyenNhoAnhThai_BaoCaoProject\\Source\\web_joliebakery\\web_joliebakery\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "web_joliebakery\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T17:07:09.55Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

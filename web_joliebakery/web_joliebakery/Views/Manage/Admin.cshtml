@@ -1,0 +1,94 @@
+﻿@model IEnumerable<web_joliebakery.Models.TBL_SANPHAM>
+
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/master_admin.cshtml";
+}
+
+<style>
+    div.container-fluid {
+        font-family: "Crimson Text", serif;
+    }
+    .table-custom {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .table-custom th, .table-custom td {
+        border: 1px solid gray;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .table-custom thead {
+        background-color: #343a40;
+        color: #fff;
+    }
+
+    .table-custom tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .table-custom tbody tr:hover {
+        background-color: #ddd;
+    }
+</style>
+
+<div class="container-fluid pb-4">
+    <div class="row">
+        <div class="col-sm-4">
+
+        </div>
+        <div class="col-sm-4 mt-4">
+            <div class="text-center">
+                <h2><strong>LIST OF PRODUCT</strong></h2>
+            </div>
+        </div>
+        <div class="col-sm-4">
+
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-3">
+            <a id="button" class="btn btn-outline-info" href="@Url.Action("Create", "Manage")">
+                ADD PRODUCT
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="table-responsive">
+                <table class="table table-custom">
+                    <thead class="bg-light text-dark">
+                        <tr>
+                            <th scope="col">CODE OF PRODUCT</th>
+                            <th scope="col">NAME OF PRODUCT</th>
+                            <th scope="col">PRICE</th>
+                            <th scope="col">DESCRIBE</th>
+                            <th scope="col">INVENTORY</th>
+                            <th scope="col">PIC</th>
+                            <th scope="col">ACT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.MASP)</td>
+                                <td>@Html.DisplayFor(modelItem => item.TENSP)</td>
+                                <td>@item.GIATIEN.ToString("N0") VNĐ</td>
+                                <td>@Html.DisplayFor(modelItem => item.NOIDUNG)</td>
+                                <td>@Html.DisplayFor(modelItem => item.SO_LUONG_TON_TRONG_KHO)</td>
+                                <td><img src="@item.HINH_DAI_DIEN" style="max-width: 100px;" class="img-fluid" /></td>
+                                <td>
+                                    <a href="@Url.Action("Edit", "Manage", new { id = item.IDSP })" class="btn btn-primary btn-sm">Edit</a> |
+                                    <a href="@Url.Action("Delete", "Manage", new { id = item.IDSP })" class="btn btn-danger btn-sm">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

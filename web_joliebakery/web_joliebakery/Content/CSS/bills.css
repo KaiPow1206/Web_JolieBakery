@@ -1,0 +1,15 @@
+﻿div#background {
+    background-color: #FFCCCC;
+}
+div#bill {
+    font-family: "Crimson Text", serif;
+}
+button.btn.btn-danger{
+    margin-left:20px;
+}
+div input.form-control {
+    max-width: 850px;
+    font-size: 16px;
+    border-radius: 4px;
+    padding: 0.375rem 0.75rem;
+}

@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Online_Payments";
+}
+
+<link href="~/Content/CSS/payment_success.css" rel="stylesheet" />
+
+<div class="container-fluid" style="padding-bottom:26px">
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-4">
+
+        </div>
+
+        <div id="success" class="col-sm-4 mt-4">
+            <div class="panel-group">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <h2 class="text-center"><i>ONLINE PAYMENTS</i></h2>
+                    </div>
+                    <div id="text" class="panel-body mt-4 text-center">
+                        <p>Chủ Tài Khoản: Nguyễn Nho Anh Thái </p>
+                        <p>Ngân Hàng: <span style="color:red">TechCom</span>Bank</p>
+                        <p>STK: 1903 6394 9570 17</p>
+                        <p id="countdown" style="font-weight:bold; color:red;"></p>
+                        <img src="~/Content/img/tk.jpg" style="height:250px" />
+                    </div>
+                    <div class="panel-body d-flex justify-content-center mt-4">
+                        <a id="viewOrderStatusButton">
+                            <button class="btn btn-outline-success">
+                                VIEW ORDER STATUS
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4">
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function startCountdown(duration, display) {
+        var timer = duration, minutes, seconds;
+        var countdownInterval = setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            display.textContent = "Time remaining: " + minutes + ":" + seconds;
+
+            if (--timer < 0) {
+                clearInterval(countdownInterval);
+                alert("Nếu bạn chưa thanh toán hãy thực hiện lại còn nếu đã thanh toán không cần quan tâm đến thông báo này");
+                startCountdown(duration, display);
+            }
+        }, 1000);
+    }
+
+    window.onload = function () {
+        var fourMinutes = 60 * 4,
+            display = document.querySelector('#countdown');
+        startCountdown(fourMinutes, display);
+
+        document.getElementById("viewOrderStatusButton").onclick = function (event) {
+            event.preventDefault();
+            alert("Cảm ơn bạn đã ủng hộ. Chúng tôi sẽ xác nhận và liên hệ bạn sớm");
+            window.location.href = '@Url.Action("Bills", "Home")';
+        };
+    };
+</script>
